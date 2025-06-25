@@ -6,4 +6,4 @@ This folder will be updated as the exercies are being done
 
 ## Folder Sstructure
 
-|-- hello.py # simple helloo world script
+|-- hello.py # simple hello world script
