@@ -6,6 +6,6 @@ This folder will be updated as the exercies are being done
 
 ## Folder Sstructure
 
-|-- hello.py # simple hello world script
-|-- levelup-python-exercise1.1.py # Exercise 1 > first try without checking the solution
-|-- levelup-python-exercise1.2.py # Exercise 2 > second attempt after checking the solution
+|-- hello.py # simple hello world script  
+|-- levelup-python-exercise1.1.py # Exercise 1 > first try without checking the solution  
+|-- levelup-python-exercise1.2.py # Exercise 2 > second attempt after checking the solution  
