@@ -8,4 +8,4 @@ This folder will be updated as the exercies are being done
 
 |-- hello.py # simple hello world script  
 |-- levelup-python-exercise1.1.py # Exercise 1 > first try without checking the solution  
-|-- levelup-python-exercise1.2.py # Exercise 2 > second attempt after checking the solution  
+|-- levelup-python-exercise1.2.py # Exercise 1 > second attempt after checking the solution  
