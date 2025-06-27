@@ -5,13 +5,17 @@ Each script is self-contained and demonstrates a specific concept or programming
 This folder will be updated as the exercises are being done
 
 ## Folder Sstructure
+File *1.py is the first attempt
+File *2.py is according to the solution given
 
 |-- hello.py # simple hello world script  
-|-- get_prime_factors1.1.py # Exercise 1 > first attempt 
-|-- get_prime_factors1.2.py # Exercise 1 > second attempt after checking the solution  
-|-- is_palindrome1.py # Exercise 2 > first attempt
-|-- is_palindrome2.py # Exercise 2 > second attempt after checking the solution 
-|-- sort_words1.py # Exercise 3 > first attempt 
-|-- sort_words2.py # Exercise 3 > second attempt after checking the solution  
-|-- index_all1.py # Exercise 4 > first attempt
-|-- index_all2.py # Exercise 4 > second attempt after checking the solution  
+|-- get_prime_factors1.1.py # Exercise 1  
+|-- get_prime_factors1.2.py # Exercise 1  
+|-- is_palindrome1.py # Exercise 2  
+|-- is_palindrome2.py # Exercise 2  
+|-- sort_words1.py # Exercise 3  
+|-- sort_words2.py # Exercise 3  
+|-- index_all1.py # Exercise 4  
+|-- index_all2.py # Exercise 4  
+|-- waiting_game1.py # Exercise 5  
+|-- waiting_game2.py # Exercise 5  
