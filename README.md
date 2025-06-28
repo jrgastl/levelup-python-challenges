@@ -7,7 +7,7 @@ File *1.py is the first attempt
 File *2.py is according to the solution given
 
 ```plaintext
-project/
+levelup-python-exercises/
 ├── hello.py                        # simple hello world script
 ├── get_prime_factors1.1.py         # Exercise 1
 ├── get_prime_factors1.2.py         # Exercise 1
