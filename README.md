@@ -24,5 +24,6 @@ levelup-python-exercises/
 ├── dictionaries/
     ├── PythonDictionary.txt        # saved from saveadictionary1.py
     └── PythonDictionary.pickle     # saved from saveadictionary2.py
-└── README.md
+├── README.md                       # This file
+└── .gitignore                      # Ignored files
 ```
