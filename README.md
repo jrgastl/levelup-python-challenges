@@ -8,7 +8,7 @@ File *2.py is according to the solution given
 
 ```plaintext
 project/
-├── hello.py                         # simple hello world script
+├── hello.py                        # simple hello world script
 ├── get_prime_factors1.1.py         # Exercise 1
 ├── get_prime_factors1.2.py         # Exercise 1
 ├── is_palindrome1.py               # Exercise 2
