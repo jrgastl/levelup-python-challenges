@@ -16,9 +16,9 @@ File *2.py is according to the solution given
 |-- index_all1.py # Exercise 4  
 |-- index_all2.py # Exercise 4  
 |-- waiting_game1.py # Exercise 5  
-|-- waiting_game2.py # Exercise 5
+|-- waiting_game2.py # Exercise 5  
 |-- saveadictionary1.py # Exercise 6  
-|-- saveadictionary2.py # Exercise 6 
-|-- dictionaries
+|-- saveadictionary2.py # Exercise 6  
+|-- dictionaries  
     |-- PythonDictionary.txt # file saved from saveadictionary1.py  
     |-- PythonDictionary.pickle # file saved from saveadictionary2.py  
