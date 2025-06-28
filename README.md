@@ -2,8 +2,6 @@
 This repository contains a collection of Python coding exercises completed as part of my Python certification from LinkedIn Learning.
 Each script is self-contained and demonstrates a specific concept or programming technique.
 
-This folder will be updated as the exercises are being done
-
 ## Folder Sstructure
 File *1.py is the first attempt
 File *2.py is according to the solution given
@@ -18,4 +16,9 @@ File *2.py is according to the solution given
 |-- index_all1.py # Exercise 4  
 |-- index_all2.py # Exercise 4  
 |-- waiting_game1.py # Exercise 5  
-|-- waiting_game2.py # Exercise 5  
+|-- waiting_game2.py # Exercise 5
+|-- saveadictionary1.py # Exercise 6  
+|-- saveadictionary2.py # Exercise 6 
+|-- dictionaries
+    |-- PythonDictionary.txt # file saved from saveadictionary1.py  
+    |-- PythonDictionary.pickle # file saved from saveadictionary2.py  
