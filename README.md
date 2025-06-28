@@ -21,7 +21,8 @@ levelup-python-exercises/
 ├── waiting_game2.py                # Exercise 5
 ├── saveadictionary1.py             # Exercise 6
 ├── saveadictionary2.py             # Exercise 6
-└── dictionaries/
+├── dictionaries/
     ├── PythonDictionary.txt        # saved from saveadictionary1.py
     └── PythonDictionary.pickle     # saved from saveadictionary2.py
+└── README.md
 ```
