@@ -1,7 +1,7 @@
-def index_all(uList,elem):
+def index_all(user_list,elem):
     result = []
     subpaths = []
-    for i,item in enumerate(uList):
+    for i,item in enumerate(user_list):
         if isinstance(item,list):
             subpaths = index_all(item,elem)
             for path in subpaths:

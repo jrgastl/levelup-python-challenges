@@ -24,6 +24,10 @@ levelup-python-exercises/
 ├── dictionaries/
     ├── PythonDictionary.txt        # saved from saveadictionary1.py
     └── PythonDictionary.pickle     # saved from saveadictionary2.py
+├── scheduleafunction1.py           # Exercise 7
+├── scheduleafunction2.py           # Exercise 7
+├── sounds/
+    └── Ring08.wav                  #sound used in Exercise 7
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```

@@ -1,7 +1,7 @@
 import pickle
-def save(pyDict,path):
+def save(py_dict,path):
     with open(path,'wb') as f:
-        pickle.dump(pyDict, f)
+        pickle.dump(py_dict, f)
 
 def load(path):
     with open(path,'rb') as f:

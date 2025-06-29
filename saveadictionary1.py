@@ -1,8 +1,8 @@
 import json
 #Function to take a python dictionary object to file.
-def save(pyDict,path):
+def save(py_dict,path):
     with open(path,'w') as f:
-        f.write(json.dumps(pyDict))
+        f.write(json.dumps(py_dict))
 
 #Function to load the saved dictionary back to python.
 def  load(path):
