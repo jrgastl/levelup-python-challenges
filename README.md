@@ -30,6 +30,8 @@ levelup-python-exercises/
     └── Ring08.wav                  #sound used in Exercise 7
 ├── sendanemail1.py                 # Exercise 8 - Function to send an e-mail with subject and message
 ├── sendanemail2.py                 # Exercise 8
+├── simulatedice1.py                # Exercise 9 - Function that return the probabilities of each outcome of rolling dices
+├── simulatedice2.py                # Exercise 9
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```
