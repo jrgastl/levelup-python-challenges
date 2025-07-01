@@ -32,6 +32,10 @@ levelup-python-exercises/
 ├── sendanemail2.py                 # Exercise 8
 ├── simulatedice1.py                # Exercise 9 - Function that return the probabilities of each outcome of rolling dices
 ├── simulatedice2.py                # Exercise 9
+├── countuniquewords1.py            # Exercise 10 - Function to count the words of a text file and rank the top 20 words
+├── countuniquewords2.py            # Exercise 10
+├── texts/
+    └── pg100.txt                   #text used in exercise 10
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```
