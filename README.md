@@ -13,7 +13,7 @@ levelup-python-exercises/
 ├── get_prime_factors1.2.py         # Exercise 1
 ├── is_palindrome1.py               # Exercise 2 - Function to check if a word is palindrome
 ├── is_palindrome2.py               # Exercise 2
-├── sort_words1.py                  # Exercise 3 - Function to sort words in an ascending order
+├── sort_words1.py                  # Exercise 3 - Function to sort words in a phrase
 ├── sort_words2.py                  # Exercise 3
 ├── index_all1.py                   # Exercise 4 - Function to find all the positions of an element on a list
 ├── index_all2.py                   # Exercise 4
@@ -24,7 +24,7 @@ levelup-python-exercises/
 ├── dictionaries/
     ├── PythonDictionary.txt        # saved from saveadictionary1.py
     └── PythonDictionary.pickle     # saved from saveadictionary2.py
-├── scheduleafunction1.py           # Exercise 7 - Function to schedule another function to a set time
+├── scheduleafunction1.py           # Exercise 7 - Function to schedule another function
 ├── scheduleafunction2.py           # Exercise 7
 ├── sounds/
     └── Ring08.wav                  #sound used in Exercise 7
@@ -36,6 +36,10 @@ levelup-python-exercises/
 ├── countuniquewords2.py            # Exercise 10
 ├── texts/
     └── pg100.txt                   #text used in exercise 10
+    └── diceware.wordlist.asc       #ascii file used in exercise 11
+    └── el_diceware_numbered.txt    #alternative txt file used in exercise 11
+├── generate_a_password1.py            # Exercise 11 - Function to generate pass phrases accordingg to diceware words list
+├── generate_a_password2.py            # Exercise 11
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```
