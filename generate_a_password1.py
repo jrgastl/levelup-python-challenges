@@ -1,4 +1,8 @@
 """
+Author Note:
+I was really happy with this code and the optimizations that were done until I learned that the random module is not suitable for security purposes.s
+
+Briefing:
 Create a password generator that takes as input the number of words 
 the password should have and generate a string of random words of 
 the Diceware list separated by spaces as password.

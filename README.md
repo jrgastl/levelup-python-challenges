@@ -25,7 +25,6 @@ Below is the general structure with a small description:
 |10        | Count the words of a text file and rank top 20 words | Expression patterns, list comprehensions |
 |11        | Generate Diceware pass phrases                       | Secrets module                           |
 
-
 ```plaintext
 levelup-python-exercises/
 ├── hello.py                        # simple hello world script

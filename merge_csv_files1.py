@@ -1,4 +1,9 @@
 '''
+Author Note:
+Implemented the knowledge from the CSV chapter of the Python Essential Training here. Had to learn in the documentation about the DictWriter, though.
+Also struggled to find the reason on why my results were skipping one line between the rows, until I read about the newline= parameter in the documentation.
+
+Briefing:
 Function to merge two or more csv files in one.
 >>>merge_CSV_files([file1.csv, file2.csv], all_files.csv)
 
