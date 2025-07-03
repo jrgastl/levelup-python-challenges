@@ -1,3 +1,7 @@
+'''
+Very helpful to discover the existence of regular expressions module with the instructor solution for this exercise.
+'''
+
 def is_palindrome(text):
     
     if type(text) != str:

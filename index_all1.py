@@ -1,3 +1,7 @@
+'''
+Recursion was the big lesson of this challenge. The most difficult part was to discover how to append the indexes at each run.
+'''
+
 def index_all(user_list,elem):
     result = []
     subpaths = []
