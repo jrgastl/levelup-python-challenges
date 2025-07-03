@@ -1,3 +1,8 @@
+'''
+I was very focused here on how to define the prime numbers at a first moment, and then later loop the prime numbers until I get all the factors.
+In the end, the instructor solution was much more simple, starting from the lowest values, checking if they were factors and prime.
+'''
+
 from random import randint
 
 def is_prime(value):
