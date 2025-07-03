@@ -1,3 +1,7 @@
+'''
+Learned different ways of using the input() function and time module.
+'''
+
 import time
 import random
 
@@ -20,3 +24,4 @@ def waiting_game():
     elif elapsedTime == seconds:
         print(f'Elapsed time: {round(elapsedTime,3)} seconds. (Unbelievable!)')
 
+waiting_game()
