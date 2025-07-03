@@ -1,47 +1,67 @@
-# LevelUp Python Coding Exercises
+# Level Up: Python - Coding Exercises
 
-This repository contains a collection of Python coding exercises completed as part of my Python certification from LinkedIn Learning.
+This repository contains a collection of Python coding exercises that are part of the Level Up: Python course in [LinkedIn Learning][url]
 Each script is self-contained and demonstrates a specific concept or programming technique.
 
-## Folder Structure
+## Overview and Folder Structure
 
-File '*1.py' is the first attempt  
-File '*2.py' is according to the solution given
+Each exercise has two files:
+    '*1.py' refers in general to my own code, with some small modifications after checking the solution from the course.
+    '*2.py' refers in general to the solution proposed by the instructor, sometime slightly adapted for my own comprehension.
+
+Below is the general structure with a small description:
+
+| Exercise | Description                                          | Skills Learned                           |
+|----------|------------------------------------------------------|------------------------------------------|
+| 1        | Get prime factors of a number                        | For loops, list methods                  |
+| 2        | Check if a word is palindrome                        | String methods                           |
+| 3        | Sort words in a phrase                               | Regular expressions, join() method       |
+| 4        | Find all the positions of an element in a list       | Recursion                                |
+| 5        | Game to guess how many seconds have passed           | Time module, input() function            |
+| 6        | Save and load dictionaries to a file                 | Reading and writing files, JSON module   |
+| 7        | Schedule another function                            | OS module, multiple arguments function   |
+| 8        | Send an e-mail with subject and message              | smtplib module, MIMEText                 |
+| 9        | Probabilities of each outcome of a set of dices      | Random module, dictionary get() method   |
+|10        | Count the words of a text file and rank top 20 words | Expression patterns, list comprehensions |
+|11        | Generate Diceware pass phrases                       | Secrets module                           |
+
 
 ```plaintext
 levelup-python-exercises/
 ├── hello.py                        # simple hello world script
-├── get_prime_factors1.py         # Exercise 1 - Function to get prime factors of a number
-├── get_prime_factors2.py         # Exercise 1
-├── is_palindrome1.py               # Exercise 2 - Function to check if a word is palindrome
+├── get_prime_factors1.py           # Exercise 1
+├── get_prime_factors2.py           # Exercise 1
+├── is_palindrome1.py               # Exercise 2
 ├── is_palindrome2.py               # Exercise 2
-├── sort_words1.py                  # Exercise 3 - Function to sort words in a phrase
+├── sort_words1.py                  # Exercise 3
 ├── sort_words2.py                  # Exercise 3
-├── index_all1.py                   # Exercise 4 - Function to find all the positions of an element on a list
+├── index_all1.py                   # Exercise 4
 ├── index_all2.py                   # Exercise 4
-├── waiting_game1.py                # Exercise 5 - A simple gaming to guess how many seconds have passed
+├── waiting_game1.py                # Exercise 5
 ├── waiting_game2.py                # Exercise 5
-├── save_a_dictionary1.py             # Exercise 6 - Function to save and load dictionaries
-├── save_a_dictionary2.py             # Exercise 6
+├── save_a_dictionary1.py           # Exercise 6
+├── save_a_dictionary2.py           # Exercise 6
 ├── dictionaries/
     ├── PythonDictionary.txt        # saved from saveadictionary1.py
     └── PythonDictionary.pickle     # saved from saveadictionary2.py
-├── schedule_a_function1.py           # Exercise 7 - Function to schedule another function
-├── schedule_a_function2.py           # Exercise 7
+├── schedule_a_function1.py         # Exercise 7 
+├── schedule_a_function2.py         # Exercise 7
 ├── sounds/
     └── Ring08.wav                  #sound used in Exercise 7
-├── send_an_email1.py                 # Exercise 8 - Function to send an e-mail with subject and message
-├── send_an_email2.py                 # Exercise 8
-├── simulate_dice1.py                # Exercise 9 - Function that return the probabilities of each outcome of rolling dices
-├── simulate_dice2.py                # Exercise 9
-├── count_unique_words1.py            # Exercise 10 - Function to count the words of a text file and rank the top 20 words
-├── count_unique_words2.py            # Exercise 10
+├── send_an_email1.py               # Exercise 8
+├── send_an_email2.py               # Exercise 8
+├── simulate_dice1.py               # Exercise 9
+├── simulate_dice2.py               # Exercise 9
+├── count_unique_words1.py          # Exercise 10
+├── count_unique_words2.py          # Exercise 10
 ├── texts/
     └── pg100.txt                   #text used in exercise 10
     └── diceware.wordlist.asc       #ascii file used in exercise 11
     └── el_diceware_numbered.txt    #alternative txt file used in exercise 11
-├── generate_a_password1.py            # Exercise 11 - Function to generate pass phrases accordingg to diceware words list
-├── generate_a_password2.py            # Exercise 11
+├── generate_a_password1.py         # Exercise 11
+├── generate_a_password2.py         # Exercise 11
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```
+
+[url]:https://www.linkedin.com/learning/level-up-python
