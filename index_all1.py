@@ -1,5 +1,7 @@
 '''
-Recursion was the big lesson of this challenge. The most difficult part was to discover how to append the indexes at each run.
+Author Note:
+It took more time than expected to finish this exercise. It was very valuable, nonetheless, because it helped me with the comprehension on how recursion works.
+It also helped me to realize how important is the ability of mentally going step by step through the code.
 '''
 
 def index_all(user_list,elem):
