@@ -1,6 +1,6 @@
 # Level Up: Python - Coding Exercises
 
-This repository contains a collection of Python coding exercises that are part of the Level Up: Python course in [LinkedIn Learning][url]
+This repository contains a collection of Python coding exercises that are part of the Level Up: Python course in [LinkedIn Learning][url].  
 Each script is self-contained and demonstrates a specific concept or programming technique.
 
 ## Overview and Folder Structure
