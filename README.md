@@ -5,7 +5,7 @@ Each script is self-contained and demonstrates a specific concept or programming
 
 ## Overview and Folder Structure
 
-Each exercise has two files:
+Each exercise has two files:  
     '*1.py' refers in general to my own code, with some small modifications after checking the solution from the course.  
     '*2.py' refers in general to the solution proposed by the instructor, sometime slightly adapted for my own comprehension.
 
