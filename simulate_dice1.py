@@ -1,6 +1,16 @@
-#Rolling dice simulation
-#Input: variable number of arguments for sides of a dice
-#Output: table of probability for each possible outcome
+'''
+Author Note:
+It took me a while to understand how to update the dictionary with the outcomes. The use of the method get() was useful here and worked well for that purpose.
+The instructor used the module collections in his solution, which was also important to learn.
+
+Briefing:
+Rolling dice simulation
+Input: variable number of arguments for sides of a dice
+Output: table of probability for each possible outcome
+'''
+
+
+
 
 import random
 

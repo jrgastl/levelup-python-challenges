@@ -1,4 +1,10 @@
 '''
+Author Notes:
+The module collections could have been used in this exercise as well, like the instructor solution. I also realized that I need to improve how to name strings so the code
+is clearer. Finally, I had to change the code after discovering that modifying the file strings to uppercase before applying the pattern doesn't lead to the correct results,
+returning a smaller number of words.
+
+Briefing:
 Input: path to a text file
 Output: print message with:
     - total number of words

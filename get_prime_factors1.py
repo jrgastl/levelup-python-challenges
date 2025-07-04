@@ -1,6 +1,8 @@
 '''
-I was very focused here on how to define the prime numbers at a first moment, and then later loop the prime numbers until I get all the factors.
-In the end, the instructor solution was much more simple, starting from the lowest values, checking if they were factors and prime.
+Author Note:
+In the first attempt, the approach was to find the prime numbers first and then look up for the factors, iterating with a while loop, so the multiplication of the factors would result in the value given in the function.
+After checking the instructor solution, I realized the code could be implemented in a much simpler way, looking for the factors from 2 upwards, and then checking if the number was prime.
+There is a lot of similarities still though, and I even built a small test in the end to check the result.
 '''
 
 from random import randint

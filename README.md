@@ -11,7 +11,7 @@ Each exercise has two files:
 
 Below is the general structure with a small description:  
 
-| Exercise | Description                                          | Skills Learned                           |
+| Exercise | Description                                          | Brief summary of skills learned          |
 |----------|------------------------------------------------------|------------------------------------------|
 | 1        | Get prime factors of a number                        | For loops, list methods                  |
 | 2        | Check if a word is palindrome                        | String methods                           |
@@ -21,14 +21,14 @@ Below is the general structure with a small description:
 | 6        | Save and load dictionaries to a file                 | Reading and writing files, JSON module   |
 | 7        | Schedule another function                            | OS module, multiple arguments function   |
 | 8        | Send an e-mail with subject and message              | smtplib module, MIMEText                 |
-| 9        | Probabilities of each outcome of a set of dices      | Random module, dictionary get() method   |
+| 9        | Probabilities of each outcome of a set of dices      | Random module, get() method              |
 |10        | Count the words of a text file and rank top 20 words | Expression patterns, list comprehensions |
 |11        | Generate Diceware pass phrases                       | Secrets module                           |
-
+|12        | Merge CSV files                                      | csv module, DictWriter() method          |
 
 ```plaintext
 levelup-python-exercises/
-├── hello.py                        # simple hello world script
+├── hello.py                        # Simple hello world script
 ├── get_prime_factors1.py           # Exercise 1
 ├── get_prime_factors2.py           # Exercise 1
 ├── is_palindrome1.py               # Exercise 2
@@ -42,12 +42,12 @@ levelup-python-exercises/
 ├── save_a_dictionary1.py           # Exercise 6
 ├── save_a_dictionary2.py           # Exercise 6
 ├── dictionaries/
-    ├── PythonDictionary.txt        # saved from saveadictionary1.py
-    └── PythonDictionary.pickle     # saved from saveadictionary2.py
+    ├── PythonDictionary.txt        # Saved from saveadictionary1.py
+    └── PythonDictionary.pickle     # Saved from saveadictionary2.py
 ├── schedule_a_function1.py         # Exercise 7 
 ├── schedule_a_function2.py         # Exercise 7
 ├── sounds/
-    └── Ring08.wav                  #sound used in Exercise 7
+    └── Ring08.wav                  # Sound used in Exercise 7
 ├── send_an_email1.py               # Exercise 8
 ├── send_an_email2.py               # Exercise 8
 ├── simulate_dice1.py               # Exercise 9
@@ -55,11 +55,17 @@ levelup-python-exercises/
 ├── count_unique_words1.py          # Exercise 10
 ├── count_unique_words2.py          # Exercise 10
 ├── texts/
-    └── pg100.txt                   #text used in exercise 10
-    └── diceware.wordlist.asc       #ascii file used in exercise 11
-    └── el_diceware_numbered.txt    #alternative txt file used in exercise 11
+    └── pg100.txt                   # Text used in exercise 10
+    └── diceware.wordlist.asc       # Ascii file used in exercise 11
+    └── el_diceware_numbered.txt    # Alternative txt file used in exercise 11
 ├── generate_a_password1.py         # Exercise 11
 ├── generate_a_password2.py         # Exercise 11
+├── merge_csv_files1.py             # Exercise 12
+├── merge_csv_files2.py             # Exercise 12
+├── csv/
+    └── class1.csv                  # CSV file created for exercise 12
+    └── class2.csv                  # CSV file created for exercise 12
+    └── all_students.csv            # Output of exercise 121
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```

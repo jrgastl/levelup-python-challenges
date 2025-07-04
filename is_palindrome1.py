@@ -1,5 +1,6 @@
 '''
-Very helpful to discover the existence of regular expressions module with the instructor solution for this exercise.
+Author Note:
+That was a great exercise to manipulate strings and slice lists. The implemenation is a bit rough, specially after learning about the regular expressions module.
 '''
 
 def is_palindrome(text):

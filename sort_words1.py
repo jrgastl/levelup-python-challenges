@@ -1,6 +1,7 @@
 '''
-It was time to implement what I just learned in the exercise before. Also learned about the sort() method and key=str.casefold parameter.
-The instructor solution was more simple and showed me how to use the join() method.
+Author Note:
+I started this exercise right after checking the instructor solution for the exercise 2 (is_palindrome2.py), so the use of regular expressions was more or less automatic.
+The instructor solution was more elegant in the end by using join() method to put everything togethe in one line.
 '''
 
 import re
@@ -11,4 +12,4 @@ def sort_words(phrase):
     finalString = " ".join(words)
     print(finalString)
 
-sort_words('It was time to implement what I just learned')
+print(sort_words('Text phrase Animals Fruits Vegetables'))
