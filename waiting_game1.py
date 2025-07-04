@@ -1,7 +1,7 @@
 '''
 Author Note:
 I suddenly realized how poorly I implemented the input() function after checking the instructor solution. Overall the code still works, however, so I didn't change it that much.
-I only added some small things like, for exxample, the feedback in case the player gets the time 100% correct. Besides that, it was resourceful to understand a bit how to use the time module. 
+I only added some small things like, for example, the feedback in case the player gets the time 100% correct. Besides that, it was resourceful to understand a bit how to use the time module. 
 '''
 
 import time
