@@ -40,7 +40,18 @@ def solve_sudoku(puzzle):
     solutions = []
     n = 0
 
-    while n < 10:
+    while n < 30:
+        #Going through every cell and check if there is an unique solution
+        for i,row in enumerate(solvedPuzzle):
+            for j,cell in enumerate(row):
+                for number in range(1,10):
+                    if check_solutions(solvedPuzzle,cell,number,row,i,j):
+                        solutions.append([i,j])
+                if len(solutions) == 1:
+                    row[j] = number
+                    solutions = []
+                else:
+                    solutions = []
         
         #Going through the puzzle big boxes and check if any number is the only result for each cell
         for number in range(1,10): 
@@ -85,7 +96,7 @@ def solve_sudoku(puzzle):
                 else:
                     solutions = []
 
-        #Going through the puzzle rows and check if any number is the only result for each cell
+        #Going through the puzzle columns and check if any number is the only result for each cell
         for number in range(1,10):
             for col in range(0,9):
                 for i,row in enumerate(solvedPuzzle):
@@ -138,4 +149,4 @@ puzzle_extreme = [[0,5,0,0,8,0,0,6,0],
                  [0,0,0,4,0,7,0,0,0],
                  [0,0,4,0,0,2,8,0,0]]
 
-solve_sudoku(puzzle_master)
+solve_sudoku(puzzle_extreme)
