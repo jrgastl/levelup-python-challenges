@@ -25,6 +25,7 @@ Below is the general structure with a small description:
 |10        | Count the words of a text file and rank top 20 words | Expression patterns, list comprehensions |
 |11        | Generate Diceware pass phrases                       | Secrets module                           |
 |12        | Merge CSV files                                      | csv module, DictWriter() method          |
+|13        | Solve a Sudoku                                       | Backtracking, itertools                  |
 
 ```plaintext
 levelup-python-exercises/
@@ -66,6 +67,8 @@ levelup-python-exercises/
     └── class1.csv                  # CSV file created for exercise 12
     └── class2.csv                  # CSV file created for exercise 12
     └── all_students.csv            # Output of exercise 121
+├── solve_a_sudoku1.py              # Exercise 13
+├── solve_a_sudoku2.py              # Exercise 13
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```
