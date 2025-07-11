@@ -1,4 +1,8 @@
 '''
+So, this was a big challenge for me. I've got stuck on it for days.
+I understand that the most "pythonic" solution for it is the backtracking, but the solution from the instructor implements the itertools module as well.
+Finally, I left in the first part of the code my attempts to use a logic to solve the problem. If the puzzle is not sovled with the logic, then backtracking is applied.
+
 Briefing:
 Create a function to solve a sudoku puzzle.
 Input: puzzle
@@ -14,99 +18,175 @@ puzzle = [[5,3,0,0,7,0,0,0,0],
           [0,0,0,4,1,9,0,0,5],
           [0,0,0,0,8,0,0,7,9]]
 '''
-def check_if_empty(solved_puzzle): #Check if no empty cell in the puzzle
-    solved = False
-    for row in solved_puzzle:
-        for cell in row:
-            if cell == 0:
-                solved = True
-    return solved
+from  collections  import Counter
 
-def get_column(puzzle,j): #Retrive the column values given a cell position
-    return [cell for row in puzzle for l,cell in enumerate(row) if l == j]
-
-def get_box(puzzle,i,j): #Retrieve the box values given a cell position
-    rows = [row for k in range(0,7,3) for row in puzzle[k:k+3] if i in range(k,k+3)]        
-    box = [cell for l in range(0,7,3) for row in rows for cell in row[l:l+3] if j in range(l,l+3)]
-    return box
-
-def check_solutions(solvedPuzzle,cell,number,row,i,j):
-    if cell == 0 and number not in row and number not in get_column(solvedPuzzle,j) and number not in get_box(solvedPuzzle,i,j):
-        return True
+def match_criteria(i,j,num,puzzle): # Check if number matches the sudoku criteria
     
-def solve_sudoku(puzzle):
-      
-    solvedPuzzle = puzzle
-    solutions = []
-    n = 0
+    if num in [row[j] for row in puzzle]: # If number is already in the same column, return False
+        return False
+    
+    iBox = i // 3 * 3
+    jBox = j // 3 * 3
+    if num in [puzzle[i][j] for i in range(iBox,iBox + 3) for j in range(jBox,jBox + 3)]: # If number is already in the same box, return False
+        return False
+    
+    if num in puzzle[i]: # If number is already in the same row, return False
+        return False
 
-    while n < 10:
-        
-        #Going through the puzzle big boxes and check if any number is the only result for each cell
-        for number in range(1,10): 
-            for box_pos_i in range(0,7,3):
-                for box_pos_j in range(0,7,3):
-                    for i,row in enumerate(solvedPuzzle):
-                        for j, cell in enumerate(row):
-                            if i in range(box_pos_i,box_pos_i+3) and j in range(box_pos_j,box_pos_j+3) and check_solutions(solvedPuzzle,cell,number,row,i,j):
-                                solutions.append([i,j])
-                                
-            ## Testing if the code works until here
-            #         print(f'for number {number} in box {box} there are {solutions} solutions')
-            #         box += 1
-            #         solutions = []
-            # box = 0
+    return True
 
+def backtrack(puzzle):  # Backtracking
+    for i in range(9):
+        for j in range(9):
+            if puzzle[i][j] == 0:
+                for num in range(1,10):
+                    if  match_criteria(i,j,num,puzzle):
+                        puzzle[i][j] = num
+                        if backtrack(puzzle):
+                            return True
+                    puzzle[i][j] = 0
+                return False
+    return True
+
+def solve_sudoku(puzzle): # Main function
+    
+    n=  0
+    while n < 5:
+        # Going through the puzzle big boxes and check if any number is the only result for each cell
+        for num in range (1,10):
+            for iBox in range(0,7,3):
+                for jBox in range(0,7,3):
+                    solutions = []
+                    for i in range(9):
+                        for j in range(9):
+                            if puzzle[i][j] == 0:
+                                if i in range(iBox,iBox + 3) and j in range(jBox,jBox+3) and match_criteria(i,j,num,puzzle):
+                                    solutions.append([i,j])
                     if len(solutions) == 1:
-                        # print(f'{number} and {solutions}')
-                        for i,row in enumerate(solvedPuzzle):
-                            for solution in solutions:
-                                if i == solution [0]:
-                                    row[solution[1]] = number
-                                    solutions = []
-                    else:
-                        solutions = []
-
-        #Going through the puzzle rows and check if any number is the only result for each cell
-        for number in range(1,10):
-            for i,row in enumerate(solvedPuzzle):
-                for j,cell in enumerate(row):
-                    if check_solutions(solvedPuzzle,cell,number,row,i,j):
-                        solutions.append([i,j])
-
-                ## Checking if the code works until here
-                # print(f'for number {number} in {i} row there are {solutions} solutions')
-                # solutions = []
-                if len(solutions) == 1:
-                    # print(f'For number {number} in row {i} there are {solutions}  solutions')
-                    for solution in solutions:
-                            row[solution[1]] = number
-                            solutions = []
-                else:
-                    solutions = []
-
-        #Going through the puzzle rows and check if any number is the only result for each cell
-        for number in range(1,10):
-            for col in range(0,9):
-                for i,row in enumerate(solvedPuzzle):
-                    for j,cell in enumerate(row):
-                        if j == col and check_solutions(solvedPuzzle,cell,number,row,i,j):
-                                solutions.append([i,j])
-                ## Checking if the code works until here
-                # print(f'for number {number} in {i} row there are {solutions} solutions')
-                # solutions = []
-                if len(solutions) == 1:
-                    # print(f'For number {number} in row {i} there are {solutions}  solutions')
-                    for i,row in enumerate(solvedPuzzle):
                         for solution in solutions:
-                            if i == solution[0]:
-                                row[solution[1]] = number
-                                solutions = []
-                else:
-                    solutions = []
-        n += 1
+                            puzzle[solution[0]][solution[1]] = num
 
-    print(solvedPuzzle)
+        # Going through the puzzle rows and check if any number is the only result for each cell
+        for num in range(1,10):
+            for i in range(9):
+                solutions = []
+                for j in range(9):
+                    if puzzle[i][j] == 0 and match_criteria(i,j,num,puzzle):
+                        solutions.append([i,j])
+                if len(solutions) == 1:
+                    for solution in solutions:
+                            puzzle[solution[0]][solution[1]] = num
+
+        # Going through the puzzle columns and check if any number is the only result for each cell
+        for num in range(1,10):
+            for col in range(9):
+                solutions = []
+                for i in range(9):
+                    for j in range(9):
+                        if j == col and match_criteria(i,j,num,puzzle):
+                                solutions.append([i,j])
+                if len(solutions) == 1:
+                    for solution in solutions:
+                        puzzle[solution[0]][solution[1]] = num
+
+        # Going through every cell and check possible solutions and adding to a dictionary
+        candidates = {}
+        for i in range(9):
+            for j in range(9):
+                if puzzle[i][j] == 0:
+                    solutions = []
+                    for num in range(1,10):
+                        if match_criteria(i,j,num,puzzle):
+                            solutions.append(num)
+                    candidates[(i,j)] = solutions
+
+        # Checking in the dictionary for naked pairs in boxes
+        for iBox in range(0,7,3):
+            for jBox in range(0,7,3): # Going through  all the elements in the box
+                doubles = {}
+                for pos in candidates:
+                    if len(candidates[pos]) == 2 and pos[0] in range(iBox,iBox + 3) and pos[1] in range (jBox,jBox +3):
+                        doubles[pos] = tuple(candidates[pos])
+                counter = Counter()
+                for pair in doubles:
+                    counter[doubles[pair]] += 1
+                repetitions = dict(counter)
+                npNums = set() # set of naked pairs numbers
+                npPos = [] # list of naked pairs positions
+                for rep,count in repetitions.items():
+                    if count == 2:
+                        for pair in doubles:
+                            if doubles[pair] == rep:
+                                npNums.add(rep[0])
+                                npNums.add(rep[1])
+                                npPos.append(pair)
+                for pos in candidates:
+                    if pos[0] in range(iBox,iBox + 3) and pos[1] in range (jBox,jBox +3) and pos not in npPos:
+                        candidates[pos] = [num for num in candidates[pos] if num not in npNums]
+        
+        # Checking in the dictionary for naked pairs in rows
+        for row in range(9):
+            doubles = {}
+            for pos in candidates:
+                if len(candidates[pos]) == 2 and pos[0] == row:
+                    doubles[pos] = tuple(candidates[pos])
+            counter = Counter()
+            for pair in doubles:
+                counter[doubles[pair]] += 1
+            repetitions = dict(counter)
+            npNums = set() # set of naked pairs numbers
+            npPos = [] # list of naked pairs positions
+            for rep,count in repetitions.items():
+                if count == 2:
+                    for pair in doubles:
+                        if doubles[pair] == rep:
+                            npNums.add(rep[0])
+                            npNums.add(rep[1])
+                            npPos.append(pair)
+            for pos in candidates:
+                if pos[0] == row and pos not in npPos:
+                    candidates[pos] = [num for num in candidates[pos] if num not in npNums]
+
+        # Checking in the dictionary for naked pairs in columns:
+        for col in range(9):
+            doubles = {}
+            for pos in candidates:
+                if len(candidates[pos]) == 2 and pos[1] == col:
+                    doubles[pos] = tuple(candidates[pos])
+            counter = Counter()
+            for pair in doubles:
+                counter[doubles[pair]] += 1
+            repetitions = dict(counter)
+            npNums = set() # set of naked pairs numbers
+            npPos = [] # list of naked pairs positions
+            for rep,count in repetitions.items():
+                if count == 2:
+                    for pair in doubles:
+                        if doubles[pair] == rep:
+                            npNums.add(rep[0])
+                            npNums.add(rep[1])
+                            npPos.append(pair)
+            for pos in candidates:
+                if pos[1] == col and pos not in npPos:
+                    candidates[pos] = [num for num in candidates[pos] if num not in npNums]
+
+        # Checking in the dictionary for single values and add them to the puzzle
+        for pos in candidates:
+            if len(candidates[pos]) == 1:
+                puzzle[pos[0]][pos[1]] = candidates[pos][0]
+        n += 1
+    '''
+    
+    Until this point in the code, the puzzle can be solved, but puzzle master and extreme cannot. This is where I got stuck most of the time trying to figure out how to solve it. Finally, 
+    I decided to rely in the backtracking solution, which, to the point where I am writing this code, is still a bit difficult to completely understand. I checked how to do it a few
+    times, but I will try to redo now alone.
+
+    '''
+    if backtrack(puzzle):
+        print(puzzle)
+
+
+
 
 puzzle = [[5,3,0,0,7,0,0,0,0],
           [6,0,0,1,9,5,0,0,0],
