@@ -1,6 +1,7 @@
 '''
+Author Note:
 So, this was a big challenge for me. I've got stuck on it for days.
-I understand that the most "pythonic" solution for it is the backtracking, but the solution from the instructor implements the itertools module as well.
+I understand that the most "pythonic" solution for it is the backtracking. Additionally, the solution from the instructor implements the itertools module as well.
 Finally, I left in the first part of the code my attempts to use a logic to solve the problem. If the puzzle is not sovled with the logic, then backtracking is applied.
 
 Briefing:

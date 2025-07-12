@@ -1,6 +1,6 @@
 """
 Author Note:
-I was really happy with this code and the optimizations that were done until I learned that the random module is not suitable for security purposes.s
+I was really happy with this code and the optimizations that were done until I learned that the random module is not suitable for security purposes.
 
 Briefing:
 Create a password generator that takes as input the number of words 
