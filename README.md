@@ -26,6 +26,7 @@ Below is the general structure with a small description:
 |11        | Generate Diceware pass phrases                       | Secrets module                           |
 |12        | Merge CSV files                                      | csv module, DictWriter() method          |
 |13        | Solve a Sudoku                                       | Backtracking, itertools                  |
+|14        | Build a ZIP archive                                  | zipfile module, pathlib module           |
 
 ```plaintext
 levelup-python-exercises/
@@ -69,6 +70,15 @@ levelup-python-exercises/
     └── all_students.csv            # Output of exercise 121
 ├── solve_a_sudoku1.py              # Exercise 13
 ├── solve_a_sudoku2.py              # Exercise 13
+├── build_a_zi_archive1.py          # Exercise 14
+├── build_a_zi_archive2.py          # Exercise 14
+├── zip/
+    └── pics
+        └── 480-360-sample.jpg      # JPG file used in exercise 14
+        └── logo.png                # PNG file used in exercise 14
+        └── python-logo-only.svg    # SVG file used in exercise 14
+    └── texts
+        └── APPNOTE.TXT             # TXT file used in exercise 14
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```
