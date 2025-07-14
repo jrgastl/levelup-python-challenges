@@ -21,7 +21,16 @@ https://docs.python.org/3/library/pathlib.html
 https://peps.python.org/pep-0428/
 
 '''
+import zipfile
+from pathlib import Path
 
-def zip_all(dir,formats,output_file):
+def zip_all(dir,sufixes,output):
 
-    pass
+#Look for all the files and retrive the name and the folder path for the ones that have extensions in the extension lists.
+    directory = Path(dir)
+
+
+    
+#Create a zip file
+
+#Add the folders and the files to the zip file
