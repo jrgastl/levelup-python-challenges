@@ -1,4 +1,4 @@
-'''
+r'''
 Briefing:
 Write a function to download and save a sequence of files.
 Input: URL for first item, output directory path
@@ -27,4 +27,18 @@ http://699340.youcanlearnit.net/image050.jpg
 
 Could not retrive
 http://699340.youcanlearnit.net/image051.jpg
+
+Documentation:
+https://realpython.com/python-download-file-from-url/
+
 '''
+from urllib.request import urlretrieve
+from urllib.parse import urlparse
+import re
+
+def download_files(url):
+    urlPath = urlparse(url).path
+    
+    
+
+download_files('http://699340.youcanlearnit.net/image001.jpg')
