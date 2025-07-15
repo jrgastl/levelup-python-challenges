@@ -1,6 +1,6 @@
 '''
 Author Note:
-It took more time than expected to finish this exercise. It was very valuable, nonetheless, because it helped me with the comprehension on how recursion works.
+It took more time than expected to finish this challenge. It was very valuable, nonetheless, because it helped me with the comprehension on how recursion works.
 It also helped me to realize how important is the ability of mentally going step by step through the code.
 '''
 

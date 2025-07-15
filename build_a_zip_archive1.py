@@ -1,6 +1,6 @@
 '''
 Author Notes:
-While searching for ways of doing this exercise in the documentation, I tried to check what would be the more simple way of doing it. After checking the results from the instructor,
+While searching for ways of doing this challenge in the documentation, I tried to check what would be the more simple way of doing it. After checking the results from the instructor,
 I found that this maybe was not the right way to go. His solution looks more complex, but in the end it is more robust without much more code to it.
 
 Briefing:
