@@ -30,6 +30,9 @@ http://699340.youcanlearnit.net/image051.jpg
 
 Documentation:
 https://realpython.com/python-download-file-from-url/
+https://docs.python.org/3/library/re.html#frie09
+https://docs.python.org/3/howto/regex.html#regex-howto
+https://docs.python.org/3/library/re.html
 
 '''
 from urllib.request import urlretrieve
@@ -38,6 +41,12 @@ import re
 
 def download_files(url):
     urlPath = urlparse(url).path
+    print(urlPath)
+    urlPathNum = re.findall('\d+', urlPath)
+    if u
+
+    
+        
     
     
 
