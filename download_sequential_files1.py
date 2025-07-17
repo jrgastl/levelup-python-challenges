@@ -32,46 +32,69 @@ https://docs.python.org/3/library/re.html#frie09
 https://docs.python.org/3/howto/regex.html#regex-howto
 https://docs.python.org/3/library/re.html
 '''
+from urllib.error import URLError
 from urllib.request import urlopen,urlretrieve
-from urllib.parse import urlparse, urlunparse
+from urllib.parse import urlparse,urlunparse
+from pathlib import Path
 import re
-import requests
 
 def check_url(url):
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
-    print(requests.get(url,headers=headers).status_code)
-    if requests.get(url,headers=headers).status_code in range(200,300):
-        return True
-    return False
+    try:
+        with urlopen(url) as u:
+            return True
+    except URLError:
+        return False
+    
+def download_and_message(url, output_path): #Download the file and print the message
+    url_path = urlparse(url).path
+    path = Path(output_path) / url_path.lstrip('/')
+    urlretrieve(url,path)
+    print(f'Successfully downloaded!\n{url}')
+
+def increment_url_path(url_path, start, end):
+    number = int(url_path[start:end]) + 1 #Get the value of the string
+    str_number = str(number).zfill(end - start) #Return the value to the string format with the proper number of zeros
+    url_path = url_path[:start] + str_number + url_path[end:] #Reassemble the url path with the new number
+    return url_path
+
+def set_url_path_to_1(url_path, start, end):
+    str_number = '1'.zfill(end - start) #Return the value to the string format with the proper number of zeros
+    url_path = url_path[:start] + str_number + url_path[end:] #Reassemble the url path with the new number
+    return url_path
 
 def download_files(url,output_path):
-    urlScheme, urlNetloc, urlPath, urlParams, urlQuery, urlFragment  = urlparse(url)
-    pathNumPos = re.finditer(r'[0-9]+', urlPath) # Parse the part of the url that has the file path (in the example "/image001.jpg") and get all the numbers positions
-    iteratorsSpan = [num.span() for num in pathNumPos if int(num.group()) == 1 ] # Separate the position for numbers that are equal to 1 in value
-    # urlretrieve(url,''.join([output_path,urlPath])) # Download the first file
-    # print(f'Successfully downloaded!\n{url}') # Download the first file
-    for span in iteratorsSpan:
-        iterator = int(urlPath[span[0]:span[1]])
-        iterator += 1
-        iteratorStr = str(iterator).zfill(len(urlPath[span[0]:span[1]]))
-        urlPath = ''.join([urlPath[:span[0]],iteratorStr,urlPath[span[1]:]])
-        downloadUrl = urlunparse([urlScheme, urlNetloc, urlPath, urlParams, urlQuery, urlFragment])
-        if check_url(downloadUrl):
-            downloadUrl = url
-            urlretrieve(downloadUrl,''.join([output_path,urlPath])) # Download the first file
-            print(f'Successfully downloaded!\n{downloadUrl}') # Download the first file
+    
+    #Finding valid iterator:
+
+    url_scheme, url_netloc, url_path, url_params, url_query, url_fragment  = urlparse(url)
+    url_path_positions = re.finditer(r'[0-9]+', url_path) #Parse the part of the url that has the file path (in the example "/image001.jpg") and get all the numbers positions
+    positions_span = [number.span() for number in url_path_positions] #Separate the position for numbers
+    for span in positions_span: #Go through every potential valid iterator and try to download the second image
+        start, end = span
+        next_path = increment_url_path(url_path,start,end)
+        second_url = urlunparse([url_scheme, url_netloc, next_path, url_params, url_query, url_fragment]) #Reassemble the url
+        if check_url(second_url): #Check if it is possible to download the second image
+            if int(url_path[start:end]) != 1: #If number is different than one, resets it to 1
+                url_path = set_url_path_to_1(url_path,start,end)
+                url = urlunparse([url_scheme, url_netloc, url_path, url_params, url_query, url_fragment])
+                next_path = increment_url_path(url_path,start,end)
+                second_url = urlunparse([url_scheme, url_netloc, next_path, url_params, url_query, url_fragment])
+         # Start download of first files with valid iterators:
+            download_and_message(url,output_path)
+            download_and_message(second_url,output_path)
+            # Continue the download
             while True:
-                iterator = int(urlPath[span[0]:span[1]])
-                iterator += 1
-                iteratorStr = str(iterator).zfill(len(urlPath[span[0]:span[1]]))
-                urlPath = ''.join([urlPath[:span[0]],iteratorStr,urlPath[span[1]:]])
-                downloadUrl = urlunparse([urlScheme, urlNetloc, urlPath, urlParams, urlQuery, urlFragment])
-                if check_url(downloadUrl):
-                    urlretrieve(downloadUrl,''.join([output_path,urlPath])) # Download the first file
-                    print(f'Successfully downloaded!\n{downloadUrl}') # Download the first file
+                next_path = increment_url_path(next_path,start,end)
+                next_url = urlunparse([url_scheme, url_netloc, next_path, url_params, url_query, url_fragment])
+                if check_url(next_url):
+                    download_and_message(next_url,output_path)
                 else:
                     break
-            print(f'Could not retrieve!\n{downloadUrl}') # Download the first file
+            print(f'Could not retrieve!\n{next_url}')
+            break
+    else:
+        print(f'Failed to download from {url}')
 
-# download_files('http://699340.youcanlearnit.net/image001.jpg','./downloads')
-print(check_url('http://699340.youcanlearnit.net/image060.jpg'))
+download_files('http://699340.youcanlearnit.net/image001.jpg','./downloads')
+# # print(check_url('http://699340.youcanlearnit.net/image060.jpg'))
+# increment_url_path('/image001.jpg', 6, 9)
