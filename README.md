@@ -32,16 +32,6 @@ Below is the general structure with a small description and summary of skills.
 |14         | Build a ZIP archive                                  | zipfile module, pathlib module           |
 |15         | Download sequential files                            | urllib module, more regular expressions  |
 
-## Skills
-
-Python (3.x), Functions & Control Flow, List Comprehensions, Recursion, Error Handling,  
-File I/O, JSON, CSV, Regular Expressions, Web Requests (`urllib`), URL Parsing,  
-Email Automation (`smtplib`, `MIME`), OS & Path Operations, ZIP File Handling,  
-Random & Secrets Modules, Probabilities, Diceware, Sudoku Solver (Backtracking, `itertools`),  
-Text Parsing, Word Counting, Prime Factorization, Scheduling & Delays, Sound Integration,  
-Data Structures (`list`, `dict`, `set`), CLI Scripts, Git/GitHub,  
-Code Documentation (`README.md`), Modular Coding, Python Standard Library
-
 ## Folder structure  
 
 With exception of the Challenge 8, to run the codes, please uncomment the last line (or lines) of each file and then execute the python command in bash.  
