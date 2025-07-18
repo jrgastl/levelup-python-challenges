@@ -2,15 +2,15 @@
 
 Welcome!
 
-The idea of this repository is to demonstrate Python skills acquired while doing the "[OpenEDG Python Institute: Programming with Python Professional Certificate][url_certificate]".
+The idea of this repository is to demonstrate Python skills acquired while doing the "[OpenEDG Python Institute: Programming with Python Professional Certificate][url_certificate]".  
 It contains a collection of Python coding challenges that are part of the Level Up: Python course in [LinkedIn Learning][url_course].  
-Each script is self-contained and demonstrates a specific concept or programming technique.
+Each script is self-contained and demonstrates a specific concept or programming technique.  
 
 ## Overview
 
 Each challenge has two files:  
-    Files with the ending '*1.py' are my own implementation.
-    Files with the ending '*2.py' are the solutions proposed by the instructor, adapted to be easily executed according to the idea of the repository.
+    Files with the ending '*1.py' are my own implementation.  
+    Files with the ending '*2.py' are the solutions proposed by the instructor, adapted to be easily executed according to the idea of the repository.  
 
 Below is the general structure with a small description and summary of skills.  
 
@@ -32,14 +32,14 @@ Below is the general structure with a small description and summary of skills.
 |14         | Build a ZIP archive                                  | zipfile module, pathlib module           |
 |15         | Download sequential files                            | urllib module, more regular expressions  |
 
-## Folder structure
+## Folder structure  
 
-With exception of the Challenge 8, to run the codes, please uncomment the last line (or lines) of each file and then execute the python command in bash.
+With exception of the Challenge 8, to run the codes, please uncomment the last line (or lines) of each file and then execute the python command in bash.  
 ```bash
 python "<challenge_name.py>"
-```
+```  
 
-For Challenge 8, please follow instructions in the file.
+For Challenge 8, please follow instructions in the file.  
 
 ```plaintext
 levelup-python-challenges/
