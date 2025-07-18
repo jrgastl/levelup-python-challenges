@@ -7,9 +7,11 @@ def load(path):
     with open(path,'rb') as f:
         return pickle.load(f)
 
-myDictio = {'a':1,'b':2,'c':3}
 
-save(myDictio,'./dictionaries/PythonDictionary.pickle')
-recovered = load('./dictionaries/PythonDictionary.pickle')
 
-print(recovered)
+# Please, uncomment the lines below to execute the code with the example given
+
+# my_dict = {'a':1,'b':2,'c':3}
+# save(my_dict,'./dictionaries/PythonDictionary.pickle')
+# recovered = load('./dictionaries/PythonDictionary.pickle')
+# print(recovered)

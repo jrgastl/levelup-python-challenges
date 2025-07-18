@@ -18,11 +18,12 @@ def roll_dices():
     return keyword
           
 def generate_passphrases(length):
-    with open('./texts/diceware.wordlist.asc' ,'r', encoding='utf-8') as dicewareFile:
-        dicewareWords = [line.split() for line in dicewareFile.readlines() if re.match(r'^[1-6]{5}\s', line)]
-    dicewareDict = {words[0]:words[1] for words in dicewareWords}
+    with open('./texts/diceware.wordlist.asc' ,'r', encoding='utf-8') as diceware_file:
+        diceware_words= [line.split() for line in diceware_file.readlines() if re.match(r'^[1-6]{5}\s', line)]
+    diceware_dict = {words[0]:words[1] for words in diceware_words}
     
-    passphrase = ' '.join(dicewareDict[roll_dices()] for _ in range(length))
+    passphrase = ' '.join(diceware_dict[roll_dices()] for _ in range(length))
     print(passphrase)
-            
-generate_passphrases(5)
+
+# Please, uncomment the line below to execute the code with the example given            
+# generate_passphrases(5)

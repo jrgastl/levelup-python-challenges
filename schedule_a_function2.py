@@ -12,5 +12,5 @@ def schedule_function(event_time, function, *args):
     print(f'{(function.__name__)}() scheduled  for {time.asctime(time.localtime(event_time))}')
     s.run()
 
-schedule_function((time.time()+2),alarm,'./sounds/Ring08.wav','Good morning!')
-#schedule_function((time.time()+2),print,'Howdy!')s
+# Please, uncomment the lines below to execute the code with the example given
+# schedule_function((time.time()+2),alarm,'./sounds/Ring08.wav','Good morning!')

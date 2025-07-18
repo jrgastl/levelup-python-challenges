@@ -1,8 +1,9 @@
 import re
 
 def is_palindrome(text):
-    cleanText = ''.join(re.findall(r'[a-z]+', text.lower()))
-    reversedText = cleanText[::-1]
-    return cleanText == reversedText
+    clean_text = ''.join(re.findall(r'[a-z]+', text.lower()))
+    reversed_text = clean_text[::-1]
+    return clean_text == reversed_text
 
-print(is_palindrome("Go hang a salami - I'm a lasagna hog."))
+# Please, uncomment the line below to execute the code with the example given
+# print(is_palindrome("Go hang a salami - I'm a lasagna hog."))

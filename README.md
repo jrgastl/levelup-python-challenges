@@ -1,15 +1,18 @@
 # Level Up: Python - Coding Challenges
 
-This repository contains a collection of Python coding challenges that are part of the Level Up: Python course in [LinkedIn Learning][url].  
+Welcome!
+
+The idea of this repository is to demonstrate Python skills acquired while doing the "[OpenEDG Python Institute: Programming with Python Professional Certificate][url_certificate]".
+It contains a collection of Python coding challenges that are part of the Level Up: Python course in [LinkedIn Learning][url_course].  
 Each script is self-contained and demonstrates a specific concept or programming technique.
 
-## Overview and Folder Structure
+## Overview
 
 Each challenge has two files:  
-    '*1.py' refers in general to my own code, with some small modifications after checking the solution from the course.  
-    '*2.py' refers in general to the solution proposed by the instructor, sometimes slightly adapted for my own comprehension.
+    Files with the ending '*1.py' are my own implementation.
+    Files with the ending '*2.py' are the solutions proposed by the instructor, adapted to be easily executed according to the idea of the repository.
 
-Below is the general structure with a small description:  
+Below is the general structure with a small description and summary of skills.  
 
 | Challenge | Description                                          | Brief summary of skills learned          |
 |-----------|------------------------------------------------------|------------------------------------------|
@@ -28,6 +31,13 @@ Below is the general structure with a small description:
 |13         | Solve a Sudoku                                       | Backtracking, itertools                  |
 |14         | Build a ZIP archive                                  | zipfile module, pathlib module           |
 |15         | Download sequential files                            | urllib module, more regular expressions  |
+
+## Folder structure
+
+With exception of the Challenge 8, to run the codes, please uncomment the last line (or lines) of each file and then execute the python command in bash.
+'bash python "<challenge_name.py>"'
+
+For Challenge 8, please follow instructions in the file.
 
 ```plaintext
 levelup-python-challenges/
@@ -87,4 +97,7 @@ levelup-python-challenges/
 └── .gitignore                      # Ignored files
 ```
 
-[url]:https://www.linkedin.com/learning/level-up-python
+[url_course]:https://www.linkedin.com/learning/level-up-python
+[url_certificate]: https://www.linkedin.com/learning/paths/openedg-python-institute-programming-with-python-professional-certificate
+
+Author: Ricardo Gastl

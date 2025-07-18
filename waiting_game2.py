@@ -16,4 +16,5 @@ def waiting_game():
     elif elapsed > target:
         print(f'({elapsed - target:.3f} seconds too slow)')
 
-waiting_game()
+# Please, uncomment the lines below to execute the code with the example given
+# waiting_game()

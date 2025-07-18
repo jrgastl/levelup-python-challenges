@@ -13,4 +13,5 @@ def count_words(path):
         for word in word_counts.most_common(20):
             print(f'{word[0]}\t{word[1]}')
 
-count_words('./texts/pg100.txt')
+# Please, uncomment the line below to execute the code with the example given
+# count_words('./texts/pg100.txt')

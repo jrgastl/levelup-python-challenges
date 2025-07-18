@@ -9,7 +9,8 @@ import re
 def sort_words(phrase):
     words = re.findall(r'[A-z]+', phrase)
     words.sort(key=str.casefold)
-    finalString = " ".join(words)
-    print(finalString)
+    final_string = " ".join(words)
+    print(final_string)
 
-print(sort_words('Text phrase Animals Fruits Vegetables'))
+# Please, uncomment the line below to execute the code with the example given
+# sort_words('Text phrase animals Fruits Vegetables')

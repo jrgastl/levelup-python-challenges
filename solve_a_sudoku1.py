@@ -1,8 +1,8 @@
 '''
 Author Note:
-So, this was a big challenge for me. I've got stuck on it for days.
+So, this was a big challenge for me. I've got stuck on it for a while.
 I understand that the most "pythonic" solution for it is the backtracking. Additionally, the solution from the instructor implements the itertools module as well.
-Finally, I left in the first part of the code my attempts to use a logic to solve the problem. If the puzzle is not sovled with the logic, then backtracking is applied.
+In the end, I left in the first part of the code my attempts to use a logic to solve the problem. If the puzzle is not solved with the logic, then backtracking is applied.
 
 Briefing:
 Create a function to solve a sudoku puzzle.
@@ -26,9 +26,9 @@ def match_criteria(i,j,num,puzzle): # Check if number matches the sudoku criteri
     if num in [row[j] for row in puzzle]: # If number is already in the same column, return False
         return False
     
-    iBox = i // 3 * 3
-    jBox = j // 3 * 3
-    if num in [puzzle[i][j] for i in range(iBox,iBox + 3) for j in range(jBox,jBox + 3)]: # If number is already in the same box, return False
+    i_box = i // 3 * 3
+    j_box = j // 3 * 3
+    if num in [puzzle[i][j] for i in range(i_box,i_box + 3) for j in range(j_box,j_box + 3)]: # If number is already in the same box, return False
         return False
     
     if num in puzzle[i]: # If number is already in the same row, return False
@@ -55,13 +55,13 @@ def solve_sudoku(puzzle): # Main function
     while n < 5:
         # Going through the puzzle big boxes and check if any number is the only result for each cell
         for num in range (1,10):
-            for iBox in range(0,7,3):
-                for jBox in range(0,7,3):
+            for i_box in range(0,7,3):
+                for j_box in range(0,7,3):
                     solutions = []
                     for i in range(9):
                         for j in range(9):
                             if puzzle[i][j] == 0:
-                                if i in range(iBox,iBox + 3) and j in range(jBox,jBox+3) and match_criteria(i,j,num,puzzle):
+                                if i in range(i_box,i_box + 3) and j in range(j_box,j_box+3) and match_criteria(i,j,num,puzzle):
                                     solutions.append([i,j])
                     if len(solutions) == 1:
                         for solution in solutions:
@@ -102,28 +102,28 @@ def solve_sudoku(puzzle): # Main function
                     candidates[(i,j)] = solutions
 
         # Checking in the dictionary for naked pairs in boxes
-        for iBox in range(0,7,3):
-            for jBox in range(0,7,3): # Going through  all the elements in the box
+        for i_box in range(0,7,3):
+            for j_box in range(0,7,3): # Going through  all the elements in the box
                 doubles = {}
                 for pos in candidates:
-                    if len(candidates[pos]) == 2 and pos[0] in range(iBox,iBox + 3) and pos[1] in range (jBox,jBox +3):
+                    if len(candidates[pos]) == 2 and pos[0] in range(i_box,i_box + 3) and pos[1] in range (j_box,j_box +3):
                         doubles[pos] = tuple(candidates[pos])
                 counter = Counter()
                 for pair in doubles:
                     counter[doubles[pair]] += 1
                 repetitions = dict(counter)
-                npNums = set() # set of naked pairs numbers
-                npPos = [] # list of naked pairs positions
+                np_nums = set() # set of naked pairs numbers
+                np_pos = [] # list of naked pairs positions
                 for rep,count in repetitions.items():
                     if count == 2:
                         for pair in doubles:
                             if doubles[pair] == rep:
-                                npNums.add(rep[0])
-                                npNums.add(rep[1])
-                                npPos.append(pair)
+                                np_nums.add(rep[0])
+                                np_nums.add(rep[1])
+                                np_pos.append(pair)
                 for pos in candidates:
-                    if pos[0] in range(iBox,iBox + 3) and pos[1] in range (jBox,jBox +3) and pos not in npPos:
-                        candidates[pos] = [num for num in candidates[pos] if num not in npNums]
+                    if pos[0] in range(i_box,i_box + 3) and pos[1] in range (j_box,j_box +3) and pos not in np_pos:
+                        candidates[pos] = [num for num in candidates[pos] if num not in np_nums]
         
         # Checking in the dictionary for naked pairs in rows
         for row in range(9):
@@ -135,18 +135,18 @@ def solve_sudoku(puzzle): # Main function
             for pair in doubles:
                 counter[doubles[pair]] += 1
             repetitions = dict(counter)
-            npNums = set() # set of naked pairs numbers
-            npPos = [] # list of naked pairs positions
+            np_nums = set() # set of naked pairs numbers
+            np_pos = [] # list of naked pairs positions
             for rep,count in repetitions.items():
                 if count == 2:
                     for pair in doubles:
                         if doubles[pair] == rep:
-                            npNums.add(rep[0])
-                            npNums.add(rep[1])
-                            npPos.append(pair)
+                            np_nums.add(rep[0])
+                            np_nums.add(rep[1])
+                            np_pos.append(pair)
             for pos in candidates:
-                if pos[0] == row and pos not in npPos:
-                    candidates[pos] = [num for num in candidates[pos] if num not in npNums]
+                if pos[0] == row and pos not in np_pos:
+                    candidates[pos] = [num for num in candidates[pos] if num not in np_nums]
 
         # Checking in the dictionary for naked pairs in columns:
         for col in range(9):
@@ -158,18 +158,18 @@ def solve_sudoku(puzzle): # Main function
             for pair in doubles:
                 counter[doubles[pair]] += 1
             repetitions = dict(counter)
-            npNums = set() # set of naked pairs numbers
-            npPos = [] # list of naked pairs positions
+            np_nums = set() # set of naked pairs numbers
+            np_pos = [] # list of naked pairs positions
             for rep,count in repetitions.items():
                 if count == 2:
                     for pair in doubles:
                         if doubles[pair] == rep:
-                            npNums.add(rep[0])
-                            npNums.add(rep[1])
-                            npPos.append(pair)
+                            np_nums.add(rep[0])
+                            np_nums.add(rep[1])
+                            np_pos.append(pair)
             for pos in candidates:
-                if pos[1] == col and pos not in npPos:
-                    candidates[pos] = [num for num in candidates[pos] if num not in npNums]
+                if pos[1] == col and pos not in np_pos:
+                    candidates[pos] = [num for num in candidates[pos] if num not in np_nums]
 
         # Checking in the dictionary for single values and add them to the puzzle
         for pos in candidates:
@@ -186,37 +186,36 @@ def solve_sudoku(puzzle): # Main function
     if backtrack(puzzle):
         print(puzzle)
 
+# Please, uncomment the lines below to execute the code with the examples given
 
+# puzzle = [[5,3,0,0,7,0,0,0,0],
+#           [6,0,0,1,9,5,0,0,0],
+#           [0,9,8,0,0,0,0,6,0],
+#           [8,0,0,0,6,0,0,0,3],
+#           [4,0,0,8,0,3,0,0,1],
+#           [7,0,0,0,2,0,0,0,6],
+#           [0,6,0,0,0,0,2,8,0],
+#           [0,0,0,4,1,9,0,0,5],
+#           [0,0,0,0,8,0,0,7,9]]
 
+# puzzle_master= [[0,4,0,7,2,0,1,0,0],
+#                  [0,3,0,9,0,0,0,0,0],
+#                  [6,0,2,0,3,0,8,9,0],
+#                  [0,0,0,2,0,9,0,0,0],
+#                  [0,0,3,5,0,0,0,0,0],
+#                  [9,2,8,0,7,0,6,0,1],
+#                  [0,0,0,0,0,0,3,0,2],
+#                  [0,9,0,8,0,0,4,0,0],
+#                  [0,0,4,0,5,0,0,0,0]]
 
-puzzle = [[5,3,0,0,7,0,0,0,0],
-          [6,0,0,1,9,5,0,0,0],
-          [0,9,8,0,0,0,0,6,0],
-          [8,0,0,0,6,0,0,0,3],
-          [4,0,0,8,0,3,0,0,1],
-          [7,0,0,0,2,0,0,0,6],
-          [0,6,0,0,0,0,2,8,0],
-          [0,0,0,4,1,9,0,0,5],
-          [0,0,0,0,8,0,0,7,9]]
+# puzzle_extreme = [[0,5,0,0,8,0,0,6,0],
+#                  [0,0,1,6,7,0,0,9,0],
+#                  [0,4,0,0,0,0,0,7,0],
+#                  [9,0,0,0,2,0,0,8,0],
+#                  [0,0,0,0,0,0,0,0,0],
+#                  [0,1,0,0,6,0,5,0,0],
+#                  [0,2,0,0,1,0,3,0,0],
+#                  [0,0,0,4,0,7,0,0,0],
+#                  [0,0,4,0,0,2,8,0,0]]
 
-puzzle_master= [[0,4,0,7,2,0,1,0,0],
-                 [0,3,0,9,0,0,0,0,0],
-                 [6,0,2,0,3,0,8,9,0],
-                 [0,0,0,2,0,9,0,0,0],
-                 [0,0,3,5,0,0,0,0,0],
-                 [9,2,8,0,7,0,6,0,1],
-                 [0,0,0,0,0,0,3,0,2],
-                 [0,9,0,8,0,0,4,0,0],
-                 [0,0,4,0,5,0,0,0,0]]
-
-puzzle_extreme = [[0,5,0,0,8,0,0,6,0],
-                 [0,0,1,6,7,0,0,9,0],
-                 [0,4,0,0,0,0,0,7,0],
-                 [9,0,0,0,2,0,0,8,0],
-                 [0,0,0,0,0,0,0,0,0],
-                 [0,1,0,0,6,0,5,0,0],
-                 [0,2,0,0,1,0,3,0,0],
-                 [0,0,0,4,0,7,0,0,0],
-                 [0,0,4,0,0,2,8,0,0]]
-
-solve_sudoku(puzzle_master)
+# solve_sudoku(puzzle_extreme)

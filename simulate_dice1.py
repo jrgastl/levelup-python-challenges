@@ -8,10 +8,6 @@ Rolling dice simulation
 Input: variable number of arguments for sides of a dice
 Output: table of probability for each possible outcome
 '''
-
-
-
-
 import random
 
 def roll_dice(*dice_sides, sampling=1000000):
@@ -29,4 +25,5 @@ def roll_dice(*dice_sides, sampling=1000000):
     for outcome in range(len(dice_sides),sum(dice_sides) + 1):
         print(f'{outcome:02d}\t{probabilities[outcome] :.2f}%')
 
-roll_dice(4,6,6,20)
+# Please, uncomment the line below to execute the code with the example given
+# roll_dice(4,6,6,20)

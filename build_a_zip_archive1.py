@@ -43,5 +43,5 @@ def zip_all(directory_path,file_extensions,output_path):
                 #And add each one to the zip file
                 z.write(file, arcname=file.relative_to(path))
 
-#Executing the function
-zip_all('./zip',['.txt','.jpg'],'./zip/myfiles.zip')
+# Please, uncomment the line below to execute the code with the example given
+# zip_all('./zip',['.txt','.jpg'],'./zip/myfiles.zip')

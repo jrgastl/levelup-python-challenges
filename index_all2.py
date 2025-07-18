@@ -8,6 +8,8 @@ def index_all(user_list,elem):
                   result.append([index] + i)
     return result
 
-myList = [[[1,2,3],2,[1,3]],2,[1,2,3]]
 
-print(index_all(myList, 2))
+# Please, uncomment the lines below to execute the code with the example given
+
+# myList = [[[1,2,3],2,[1,3]],2,[1,2,3]]
+# print(index_all(myList, 2))

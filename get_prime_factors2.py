@@ -10,4 +10,5 @@ def get_prime_factors(number):
 			n = n + 1
 	return factors
 
-print(get_prime_factors(60))
+# Please, uncomment the line below to execute the code with the example given
+# print(get_prime_factors(60))

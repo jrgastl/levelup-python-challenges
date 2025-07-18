@@ -14,8 +14,11 @@ def  load(path):
     with open(path, 'r') as f:
         return json.loads(f.read())
 
-myDict = {'a':1,'b':2,'c':3}
 
-save(myDict,'./dictionaries/PythonDictionary.txt')
-recovered = load('./dictionaries/PythonDictionary.txt')
-print(recovered)
+
+# Please, uncomment the lines below to execute the code with the example given
+
+# my_dict = {'a':1,'b':2,'c':3}
+# save(my_dict,'./dictionaries/PythonDictionary.txt')
+# recovered = load('./dictionaries/PythonDictionary.txt')
+# print(recovered)

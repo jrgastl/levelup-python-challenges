@@ -30,5 +30,5 @@ def merge_csv_files(csv_list, output_path):
         for row in merged_data:
             writer.writerow(row)
 
-
-merge_csv_files(['./csv/class1.csv','./csv/class2.csv'],'./csv/all_students.csv')
+# Please, uncomment the line below to execute the code with the example given
+# merge_csv_files(['./csv/class1.csv','./csv/class2.csv'],'./csv/all_students.csv')
