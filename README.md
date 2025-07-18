@@ -36,7 +36,7 @@ Below is the general structure with a small description and summary of skills.
 
 With exception of the Challenge 8, to run the codes, please uncomment the last line (or lines) of each file and then execute the python command in bash.  
 ```bash
-python "<challenge_name.py>"
+python "challenge_name.py"
 ```  
 
 For Challenge 8, please follow instructions in the file.  
