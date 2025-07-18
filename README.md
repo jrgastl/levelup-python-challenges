@@ -27,6 +27,7 @@ Below is the general structure with a small description:
 |12         | Merge CSV files                                      | csv module, DictWriter() method          |
 |13         | Solve a Sudoku                                       | Backtracking, itertools                  |
 |14         | Build a ZIP archive                                  | zipfile module, pathlib module           |
+|15         | Download sequential files                            | urllib module, more regular expressions  |
 
 ```plaintext
 levelup-python-challenges/
@@ -70,8 +71,8 @@ levelup-python-challenges/
     └── all_students.csv            # Output of Challenge 12
 ├── solve_a_sudoku1.py              # Challenge 13
 ├── solve_a_sudoku2.py              # Challenge 13
-├── build_a_zip_archive1.py          # Challenge 14
-├── build_a_zip_archive2.py          # Challenge 14
+├── build_a_zip_archive1.py         # Challenge 14
+├── build_a_zip_archive2.py         # Challenge 14
 ├── zip/
     └── pics
         └── 480-360-sample.jpg      # JPG file used in Challenge 14
@@ -79,6 +80,9 @@ levelup-python-challenges/
         └── python-logo-only.svg    # SVG file used in Challenge 14
     └── texts
         └── APPNOTE.TXT             # TXT file used in Challenge 14
+├── download_sequential_files1.py   # Challenge 15
+├── download_sequential_files2.py   # Challenge 15
+├── downloads/                      # Folder to store the files from Challenge 15
 ├── README.md                       # This file
 └── .gitignore                      # Ignored files
 ```

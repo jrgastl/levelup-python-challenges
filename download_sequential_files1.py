@@ -1,4 +1,10 @@
 '''
+Author Notes:
+My approach for this challenge was to cover as much cases as possible, although I still missed the case where a file could be missing in the server and
+the case where the directory is non existent. The instructors solution follows a slightly different approach. It doesn't try to find all the numbers that could iterate. 
+But it includes indeed the case where a file is missing and it creates the directory if it is non existent. I also prefer more the instructor approach to breakdown the url,
+with the os module.
+
 Briefing:
 Write a function to download and save a sequence of files.
 Input: URL for first item, output directory path
@@ -12,13 +18,7 @@ http://699340.youcanlearnit.net/image001.jpg
 Successfully downloaded
 http://699340.youcanlearnit.net/image002.jpg
 
-Successfully downloaded
-http://699340.youcanlearnit.net/image003.jpg
-
 ...
-
-Successfully downloaded
-http://699340.youcanlearnit.net/image049.jpg
 
 Successfully downloaded
 http://699340.youcanlearnit.net/image050.jpg
@@ -49,7 +49,7 @@ def download_and_message(url, output_path): #Download the file and print the mes
     url_path = urlparse(url).path
     path = Path(output_path) / url_path.lstrip('/')
     urlretrieve(url,path)
-    print(f'Successfully downloaded!\n{url}')
+    print(f'Successfully downloaded\n{url}')
 
 def increment_url_path(url_path, start, end):
     number = int(url_path[start:end]) + 1 #Get the value of the string
@@ -66,7 +66,7 @@ def download_files(url,output_path):
     
     #Finding valid iterator:
 
-    url_scheme, url_netloc, url_path, url_params, url_query, url_fragment  = urlparse(url)
+    url_scheme, url_netloc, url_path, url_params, url_query, url_fragment  = urlparse(url) # Although I don't use these variables in the example, I tried to be more general and cover as much cases as possible
     url_path_positions = re.finditer(r'[0-9]+', url_path) #Parse the part of the url that has the file path (in the example "/image001.jpg") and get all the numbers positions
     positions_span = [number.span() for number in url_path_positions] #Separate the position for numbers
     for span in positions_span: #Go through every potential valid iterator and try to download the second image
@@ -95,6 +95,5 @@ def download_files(url,output_path):
     else:
         print(f'Failed to download from {url}')
 
-download_files('http://699340.youcanlearnit.net/image001.jpg','./downloads')
-# # print(check_url('http://699340.youcanlearnit.net/image060.jpg'))
-# increment_url_path('/image001.jpg', 6, 9)
+# Please, uncomment the line below to execute the code with the example given
+# download_files('http://699340.youcanlearnit.net/image001.jpg','./downloads')
