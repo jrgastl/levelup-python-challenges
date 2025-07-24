@@ -1,5 +1,7 @@
 # Level Up: Python - Coding Challenges
 
+Professional Certificate:[Completed][url_finished]
+
 Welcome!
 
 The idea of this repository is to demonstrate Python skills acquired while doing the "[OpenEDG Python Institute: Programming with Python Professional Certificate][url_certificate]".  
@@ -101,6 +103,7 @@ levelup-python-challenges/
 ```
 
 [url_course]:https://www.linkedin.com/learning/level-up-python
-[url_certificate]: https://www.linkedin.com/learning/paths/openedg-python-institute-programming-with-python-professional-certificate
+[url_certificate]:https://www.linkedin.com/learning/paths/openedg-python-institute-programming-with-python-professional-certificate
+[url_finished]:https://www.linkedin.com/learning/certificates/d18785f9637401e309fa7d9b3520fdeb5119905cb733f30a6a1e71c39e92bbbe?trk=share_certificate
 
 Author: Ricardo Gastl
