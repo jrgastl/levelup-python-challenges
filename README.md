@@ -1,6 +1,6 @@
 # Level Up: Python - Coding Challenges
 
-Professional Certificate:[Completed][url_finished]
+Professional Certificate: [Completed][url_finished]
 
 Welcome!
 
