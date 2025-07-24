@@ -1,8 +1,9 @@
 # Level Up: Python - Coding Challenges
 
-Professional Certificate: [Completed][url_finished]
+## Status
+Completed! [Professional Certificate][url_finished]
 
-Welcome!
+## Welcome!
 
 The idea of this repository is to demonstrate Python skills acquired while doing the "[OpenEDG Python Institute: Programming with Python Professional Certificate][url_certificate]".  
 It contains a collection of Python coding challenges that are part of the Level Up: Python course in [LinkedIn Learning][url_course].  
