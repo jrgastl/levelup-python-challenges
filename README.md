@@ -17,23 +17,23 @@ Each challenge has two files:
 
 Below is the general structure with a small description and summary of skills.  
 
-| Challenge | Description                                          | Brief summary of skills learned          |
-|-----------|------------------------------------------------------|------------------------------------------|
-| 1         | Get prime factors of a number                        | For loops, list methods                  |
-| 2         | Check if a word is palindrome                        | String methods                           |
-| 3         | Sort words in a phrase                               | Regular expressions, join() method       |
-| 4         | Find all the positions of an element in a list       | Recursion                                |
-| 5         | Game to guess how many seconds have passed           | Time module, input() function            |
-| 6         | Save and load dictionaries to a file                 | Reading and writing files, JSON module   |
-| 7         | Schedule another function                            | OS module, multiple arguments function   |
-| 8         | Send an e-mail with subject and message              | smtplib module, MIMEText                 |
-| 9         | Probabilities of each outcome of a set of dices      | Random module, get() method              |
-|10         | Count the words of a text file and rank top 20 words | Expression patterns, list comprehensions |
-|11         | Generate Diceware pass phrases                       | Secrets module                           |
-|12         | Merge CSV files                                      | csv module, DictWriter() method          |
-|13         | Solve a Sudoku                                       | Backtracking, itertools                  |
-|14         | Build a ZIP archive                                  | zipfile module, pathlib module           |
-|15         | Download sequential files                            | urllib module, more regular expressions  |
+| Challenge | Description | Brief summary of skills learned |
+|-|-|-|
+| 1 | Get prime factors of a number | For loops, list methods |
+| 2 | Check if a word is palindrome | String methods |
+| 3 | Sort words in a phrase | Regular expressions, join() method |
+| 4 | Find all the positions of an element in a list | Recursion |
+| 5 | Game to guess how many seconds have passed | Time module, input() function |
+| 6 | Save and load dictionaries to a file | Reading and writing files, JSON module |
+| 7 | Schedule another function | OS module, multiple arguments function |
+| 8 | Send an e-mail with subject and message | smtplib module, MIMEText |
+| 9 | Probabilities of each outcome of a set of dices | Random module, get() method |
+|10 | Count the words of a text file and rank top 20 words | Expression patterns, list comprehensions |
+|11 | Generate Diceware pass phrases | Secrets module |
+|12 | Merge CSV files | csv module, DictWriter() method |
+|13 | Solve a Sudoku | Backtracking, itertools |
+|14 | Build a ZIP archive | zipfile module, pathlib module |
+|15 | Download sequential files | urllib module, more regular expressions  |
 
 ## Folder structure  
 
